@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /index.html
+  - source: /demo-spring.jar
     destination: /tmp/code/
 hooks:
   BeforeInstall:

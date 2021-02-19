@@ -1,6 +1,8 @@
 #!/bin/bash
 pwd
-
 echo "hello testing"
-java -jar ./tmp/code-package/demo-spring.jar
+cd tmp
+pwd
+ls
+java -jar demo-spring.jar
 

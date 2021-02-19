@@ -25,6 +25,3 @@ branch_config:
       serviceRoleArn: arn:aws:iam::934247962179:role/CT_DEV_IAM_ROLE_CODE_DEPLOY
       ec2TagFilters:
         - { Type: KEY_AND_VALUE, Key: Environment, Value: dev }
-    deploymentConfig:
-      autoRollbackConfiguration:
-        enabled: true

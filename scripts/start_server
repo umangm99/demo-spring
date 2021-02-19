@@ -1,4 +1,5 @@
 #!/bin/bash
 service httpd start
 pwd
+java -jar /tmp/code/demo-spring.jar --spring.datasource.url=jdbc:mysql://casualtalent-dev.c5asdskod118.ap-southeast-2.rds.amazonaws.com:3306/casualtalent
 

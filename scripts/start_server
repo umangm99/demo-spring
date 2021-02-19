@@ -2,5 +2,5 @@
 service httpd start
 pwd
 cd /tmp/code
-nohup java -jar demo-spring.jar --spring.datasource.url=jdbc:mysql://casualtalent-dev.c5asdskod118.ap-southeast-2.rds.amazonaws.com:3306/casualtalent > /dev/null 2> /dev/null < /dev/null &
+nohup java -jar demo-spring.jar --spring.datasource.url=jdbc:mysql://casualtalent-dev.c5asdskod118.ap-southeast-2.rds.amazonaws.com:3306/casualtalent >/dev/null 2>&1 &
 

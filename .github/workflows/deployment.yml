@@ -18,12 +18,14 @@ jobs:
         aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
         aws-region: ap-southeast-2
     - uses: actions/checkout@v2
-    - name: CodeDeploy
-      uses: byu-oit/github-action-codedeploy@v1
-      with:
-        application-name: CT_DEV_CD_APP
-        deployment-group-name: CT_DEV_CD_GROUP
-        appspec-file: appspec.yml
+    - id: deploy
+      uses: webfactory/create-aws-codedeploy-deployment@v0.2.2
+#    - name: CodeDeploy
+#      uses: byu-oit/github-action-codedeploy@v1
+#      with:
+#        application-name: CT_DEV_CD_APP
+#        deployment-group-name: CT_DEV_CD_GROUP
+#        appspec-file: appspec.yml
 #    - uses: peter-evans/commit-comment@v1
 #      with:
 #        token: ${{ secrets.GITHUB_TOKEN }}

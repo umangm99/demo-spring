@@ -4,5 +4,6 @@ echo "hello testing"
 cd var/code-package
 pwd
 ls
+unzip demo-spring.jar.zip
 java -jar demo-spring.jar
 

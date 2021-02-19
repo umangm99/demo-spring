@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /demo-spring.jar
-    destination: /tmp/code-package/
+    destination: /tmp/code-package
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies

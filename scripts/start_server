@@ -1,3 +1,4 @@
 #!/bin/bash
-service httpd start
+pwd
+java -jar ./tmp/code-package/demo-spring.jar
 

@@ -1,9 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: /index.html
-    destination: /var/www/html/data/
-    overwrite: true
+  - source: /demo-spring.jar
+    destination: /tmp/code-package/
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies
@@ -17,3 +16,14 @@ hooks:
       timeout: 300
       runas: root
 
+branch_config:
+
+  main:
+    deploymentGroupName: CT_DEV_CD_GROUP
+    deploymentGroupConfig:
+      serviceRoleArn: arn:aws:iam::934247962179:role/CT_DEV_IAM_ROLE_CODE_DEPLOY
+      ec2TagFilters:
+        - { Type: KEY_AND_VALUE, Key: Environment, Value: dev }
+    deploymentConfig:
+      autoRollbackConfiguration:
+        enabled: true

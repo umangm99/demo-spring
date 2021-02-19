@@ -20,7 +20,7 @@ hooks:
 branch_config:
 
   main:
-    deploymentGroupName: CT_DEV_CD_GROUP
+    deploymentGroupName: demo-spring-dg
     deploymentGroupConfig:
       serviceRoleArn: arn:aws:iam::934247962179:role/CT_DEV_IAM_ROLE_CODE_DEPLOY
       ec2TagFilters:

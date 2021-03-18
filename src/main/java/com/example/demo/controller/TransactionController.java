@@ -11,27 +11,32 @@ import java.util.Optional;
 @RestController
 public class TransactionController {
 
-    @Autowired
-    TransactionService transactionService;
+	@Autowired
+	TransactionService transactionService;
 
-    @PostMapping("/create")
-    public Long createTransaction(@RequestBody Transaction transaction) {
-        transactionService.saveTransaction(transaction);
-        return transaction.getTransactionId();
-    }
+	@GetMapping("/")
+	public String index() {
+		return "Index Page for health check";
+	}
 
-    @GetMapping("/viewAll")
-    public Iterable<Transaction> viewAllTransactions() {
-        return transactionService.getTransactionHistory();
-    }
+	@PostMapping("/create")
+	public Long createTransaction(@RequestBody Transaction transaction) {
+		transactionService.saveTransaction(transaction);
+		return transaction.getTransactionId();
+	}
 
-    @GetMapping("/view/{id}")
-    public Transaction viewTransactionById(@PathVariable("id") Long id) {
-        Optional<Transaction> transaction = transactionService.getTransaction(id);
-        if (transaction.isPresent()) {
-            return transaction.get();
-        }
+	@GetMapping("/viewAll")
+	public Iterable<Transaction> viewAllTransactions() {
+		return transactionService.getTransactionHistory();
+	}
 
-        throw new InvalidTransationReferenceException("Invalid transaction reference provided");
-    }
+	@GetMapping("/view/{id}")
+	public Transaction viewTransactionById(@PathVariable("id") Long id) {
+		Optional<Transaction> transaction = transactionService.getTransaction(id);
+		if (transaction.isPresent()) {
+			return transaction.get();
+		}
+
+		throw new InvalidTransationReferenceException("Invalid transaction reference provided");
+	}
 }
